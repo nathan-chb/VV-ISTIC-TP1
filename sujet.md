@@ -28,5 +28,7 @@ The main benefits of WebAssembly having a formal specification are :
    - Fast performances : Low level code can use the full performance of a machine
    - Portability : WebAssembly is hardware- and platform-independent which means it can be deployed across all platforms.
    - Compactness : the fact that it's written in Binary makes it so that it weights way less than JavaScript code which is very useful when sending it over the internet.
+Of course specifying a language in a formal way does not prevent it from having bugs, so testing is still the thing to do here.
 
 ###5.
+WebAssembly 
