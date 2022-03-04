@@ -31,4 +31,6 @@ The main benefits of WebAssembly having a formal specification are :
 Of course specifying a language in a formal way does not prevent it from having bugs, so testing is still the thing to do here.
 
 ###5.
-WebAssembly 
+The mechanized specification of WebAssembly contains extended features and behaviour, improving it. During the process of proving WebAssembly's properties, several errors where found in the original specification, proving the efficiency of the mechanizing process.
+To prove webassembly's specification properties, Lemmas were introduced. The lemma is a generalised version of a property that is required to prove the progress property.
+Those lemmas were proven using an executable interpreter augmented with a reference parser and linker
