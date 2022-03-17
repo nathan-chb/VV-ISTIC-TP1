@@ -12,16 +12,16 @@
 
 ## Answers
 
-###1. 
+### 1.
 Le 23 octobre 2021, Tesla a proposé une mise à jour pour avoir une "Conduite entièrement autonome" aux utilisateurs volontaires. Cependant, cette mise à jour comportait un bug, celui-ci insérait un problème de communication entre deux modules de la voiture. Le module de détecteur de collision frontale et le frein d'urgence. Les deux modules ne communiquaient plus ensemble ce qui pouvait entraîner une voiture qui freinait sans aucune raison. Cela aurait pu entraîner des collisions avec les voitures qui suivent les Tesla endommagées. Pour l'entreprise Tesla, le bug aurait pu amener à rembourser les dégâts endommagés et amener un manque de confiance envers la marque. Cependant, aucun dégât n'a été répertorié. Notre bug est global, car il venait d'un problème de communication entre deux modules.   
 
-###2. 
+### 2.
 We chose this [resolved bug](https://issues.apache.org/jira/projects/COLLECTIONS/issues/COLLECTIONS-799?filter=doneissues).  The author of the ticket states that an UnmodifiableNavigableSet (which is not supposed to be modifiable) can actually be changed via the methods pollFirst() and pollLast() which returns respectively the first and last element of the set and removes them. UnmodifiableNavigableSet inherits those methods from its supertype NavigableSet. This is a local bug because it can be tracked and fixed in the code and does not come from the interaction between modules. The solution is to simply override the functions in the UnmodifiableNavigableSet to throw UnsupportedOperationException. The contributors did add [tests to prevent those from happening in the future](https://github.com/apache/commons-collections/pull/250/commits/241ca64b5f469cc0e4c629a411c7b52128c2acb9)
 
-###3. 
+### 3.
 Netflix utilise le chaos engineering et plus précisement le chaos monkey pour tester leurs codes. Ils vont dans un premier temps définir un context de tests, avec ce qu'ils vont tester, et deux groupes d'utilisateurs, ceux avec un bug et ceux sans. Ensuite ils vont analysées l'impact du bug en comparant les streams par secondes (SPS) des deux groupes. Si un écarts important est détécté cela signifie que le bug n'est pas correctement gérer et qu'il produit une frustation trop important sur l'utlisateur donc il faut le corriger ou rediriger vers une solution moins génante. Amazon, Google, Microsoft, et Facebook utilise aussi le chaos engineering pour tester leurs applications. 
 
-###4. 
+### 4. 
 The main benefits of WebAssembly having a formal specification are :
    - "a clean design" : by specifying its architecture through formal semantics, it allows for more structured expectations of what the code needs to do and how it needs to be performing
    - Consistent performances : Unlike its Javascript counterPart, WebAssembly's behavior is much more predictable
@@ -30,7 +30,7 @@ The main benefits of WebAssembly having a formal specification are :
    - Compactness : the fact that it's written in Binary makes it so that it weights way less than JavaScript code which is very useful when sending it over the internet.
 Of course specifying a language in a formal way does not prevent it from having bugs, so testing is still the thing to do here.
 
-###5.
+### 5.
 The mechanized specification of WebAssembly contains extended features and behaviour, improving it. During the process of proving WebAssembly's properties, several errors where found in the original specification, proving the efficiency of the mechanizing process.
 To prove webassembly's specification properties, Lemmas were introduced. The lemma is a generalised version of a property that is required to prove the progress property.
 Those lemmas were proven using an executable interpreter augmented with a reference parser and linker
